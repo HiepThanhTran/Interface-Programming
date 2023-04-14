@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTGD_BaiThucHanh8.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,15 +18,11 @@ namespace LTGD_BaiThucHanh8
         private void BTTL_Form2_Option_Load(object sender, EventArgs e)
         {
             radioButtons = groupBox1.Controls.OfType<RadioButton>().ToList();
-            lbColor.BackColor = BTTL_Form2.shapeColor;
-            foreach (RadioButton radioButton in radioButtons)
-            {
-                if (radioButton.Text == BTTL_Form2.shapeType)
-                {
-                    radioButton.Checked = true;
-                    break;
-                }
-            }
+            lbColor.BackColor = BTTL_Form2.shape.Color;
+            rbRectangle.Tag = ShapeType.Rectangle;
+            rbEllipse.Tag = ShapeType.Ellipse;
+            rbTriangle.Tag = ShapeType.Triangle;
+            (radioButtons.FirstOrDefault(rb => (ShapeType)rb.Tag == BTTL_Form2.shape.Type)).Checked = true;
         }
 
         private void LbColor_Click(object sender, EventArgs e)
@@ -40,15 +37,9 @@ namespace LTGD_BaiThucHanh8
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            BTTL_Form2.shapeColor = lbColor.BackColor;
-            foreach (RadioButton radioButton in radioButtons)
-            {
-                if (radioButton.Checked)
-                {
-                    BTTL_Form2.shapeType = radioButton.Text;
-                    break;
-                }
-            }
+            ShapeType shapeType = (ShapeType)(radioButtons.FirstOrDefault(rb => rb.Checked)).Tag;
+            BTTL_Form2.shape = ShapeFactory.CreateShape(shapeType);
+            BTTL_Form2.shape.Color = lbColor.BackColor;
             Close();
         }
 

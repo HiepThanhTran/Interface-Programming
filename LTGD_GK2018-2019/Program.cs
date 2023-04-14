@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace LTGD_BaiThucHanh7
+namespace LTGD_GK2018_2019
 {
     internal static class Program
     {
@@ -13,7 +13,7 @@ namespace LTGD_BaiThucHanh7
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BTTL_Form1());
+            Application.Run(new Form1_Main());
         }
     }
 }

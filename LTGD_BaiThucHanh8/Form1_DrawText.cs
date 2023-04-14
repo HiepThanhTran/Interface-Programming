@@ -19,7 +19,7 @@ namespace LTGD_BaiThucHanh8
             format.Alignment = StringAlignment.Far;
             e.Graphics.DrawString("HELLO", font, Brushes.DarkGreen, ClientRectangle, format);
 
-            TextureBrush textureBrush = new TextureBrush(Image.FromFile(Application.StartupPath + @"\hoa.png"));
+            TextureBrush textureBrush = new TextureBrush(Image.FromFile("hoa.png"));
             format.LineAlignment = StringAlignment.Far;
             format.Alignment = StringAlignment.Near;
             e.Graphics.DrawString("HELLO", font, textureBrush, ClientRectangle, format);

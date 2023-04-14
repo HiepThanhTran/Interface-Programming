@@ -13,7 +13,7 @@ namespace LTGD_BaiThucHanh8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BTTL_Form1());
+            Application.Run(new BTTL_Form2());
         }
     }
 }

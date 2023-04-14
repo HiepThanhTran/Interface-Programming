@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5C9EA3C-2891-4532-BE47-8AF06BF7887F}</ProjectGuid>
+    <ProjectGuid>{F1E11B93-5EB8-4BEE-832D-F519F721BC9D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LTGD_BaiThucHanh8</RootNamespace>
-    <AssemblyName>LTGD_BaiThucHanh8</AssemblyName>
+    <RootNamespace>LTGD_GK2019_2020_Crown_Anchor</RootNamespace>
+    <AssemblyName>LTGD_GK2019-2020-Crown&amp;Anchor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,23 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BTTL_Form1.resx">
-      <DependentUpon>BTTL_Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BTTL_Form2.resx">
-      <DependentUpon>BTTL_Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BTTL_Form2_Option.resx">
-      <DependentUpon>BTTL_Form2_Option.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1_DrawByMouse.resx">
-      <DependentUpon>Form1_DrawByMouse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1_DrawImage.resx">
-      <DependentUpon>Form1_DrawImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1_DrawText.resx">
-      <DependentUpon>Form1_DrawText.cs</DependentUpon>
+    <Compile Include="Form1_Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1_Intro.Designer.cs">
+      <DependentUpon>Form1_Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1_Main.Designer.cs">
+      <DependentUpon>Form1_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1_Intro.resx">
+      <DependentUpon>Form1_Intro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1_Main.resx">
       <DependentUpon>Form1_Main.cs</DependentUpon>
@@ -72,59 +71,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="BTTL_Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BTTL_Form1.Designer.cs">
-      <DependentUpon>BTTL_Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BTTL_Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BTTL_Form2.Designer.cs">
-      <DependentUpon>BTTL_Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BTTL_Form2_Option.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BTTL_Form2_Option.Designer.cs">
-      <DependentUpon>BTTL_Form2_Option.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1_DrawByMouse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1_DrawByMouse.Designer.cs">
-      <DependentUpon>Form1_DrawByMouse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1_DrawImage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1_DrawImage.Designer.cs">
-      <DependentUpon>Form1_DrawImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1_DrawText.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1_DrawText.Designer.cs">
-      <DependentUpon>Form1_DrawText.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1_Main.Designer.cs">
-      <DependentUpon>Form1_Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="model\EllipseDrawBehavior.cs" />
-    <Compile Include="model\IDrawBehavior.cs" />
-    <Compile Include="model\RectangleDrawBehavior.cs" />
-    <Compile Include="model\Shape.cs" />
-    <Compile Include="model\ShapeFactory.cs" />
-    <Compile Include="model\ShapeType.cs" />
-    <Compile Include="model\TriangleDrawBehavior.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +89,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\nai.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\bau.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\ca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\cua.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\ga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hinh\tom.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

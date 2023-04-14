@@ -1,9 +1,9 @@
-﻿using System;
+﻿using LTGD_BaiThucHanh7.model;
+using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using LTGD_BaiThucHanh7.model;
+using System.Windows.Forms;
 
 namespace LTGD_BaiThucHanh7
 {
@@ -16,27 +16,30 @@ namespace LTGD_BaiThucHanh7
             InitializeComponent();
         }
 
+        private void ShowList()
+        {
+            foreach (Employee employee in employees)
+            {
+                ListViewItem listViewItem = new ListViewItem(employee.Name);
+                listViewItem.SubItems.Add(employee.Age.ToString());
+                listViewItem.SubItems.Add(employee.Address);
+                lvEmployee.Items.Add(listViewItem);
+            }
+        }
+
         private void BtnInsert_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "" || txtAddress.Text == "" || txtAge.Text == "") return;
             try
             {
                 int age = Convert.ToInt32(txtAge.Text.Trim());
                 string address = txtAddress.Text.Trim();
                 string name = txtName.Text.Trim();
-                if (address != "" && name != "")
-                {
-                    employees.Add(new Employee(name, age, address));
-                    ListViewItem listViewItem = new ListViewItem(name);
-                    listViewItem.SubItems.Add(age.ToString());
-                    listViewItem.SubItems.Add(address);
-                    lvEmployee.Items.Add(listViewItem);
-                    txtAge.Text = "";
-                    txtName.Text = "";
-                    txtAddress.Text = "";
-                    txtName.Focus();
-                }
+                employees.Add(new Employee(name, age, address));
+                txtAge.Text = txtName.Text = txtAddress.Text = "";
+                txtName.Focus();
             }
-            catch(FormatException ex)
+            catch (FormatException ex)
             {
                 MessageBox.Show(ex.Message, "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -49,29 +52,56 @@ namespace LTGD_BaiThucHanh7
             ofd.Filter = "Employee Files |*.empl";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                FileStream stream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-                BinaryFormatter formatter = new BinaryFormatter();
-                employees = formatter.Deserialize(stream) as List<Employee>;
+                FileStream stream = null;
+                try
+                {
+                    stream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    employees = formatter.Deserialize(stream) as List<Employee>;
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    stream.Close();
+                }
             }
-            foreach (Employee employee in employees)
-            {
-                ListViewItem listViewItem = new ListViewItem(employee.Name);
-                listViewItem.SubItems.Add(employee.Age.ToString());
-                listViewItem.SubItems.Add(employee.Address);
-                lvEmployee.Items.Add(listViewItem);
-            }
+            ShowList();
             tabControl1.SelectedIndex = 1;
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Employee Files |*.empl";
-            if(sfd.ShowDialog() == DialogResult.OK)
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Filter = "Employee Files |*.empl";
+            if (sd.ShowDialog() == DialogResult.OK)
             {
-                FileStream stream = new FileStream(sfd.FileName, FileMode.Create, FileAccess.Write);
-                BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, employees);
+                FileStream stream = null;
+                try
+                {
+                    stream = new FileStream(sd.FileName, FileMode.Create, FileAccess.Write);
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, employees);
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    stream.Close();
+                }
+            }
+        }
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1)
+            {
+                ShowList();
+                txtAge.Text = txtName.Text = txtAddress.Text = "";
             }
         }
     }

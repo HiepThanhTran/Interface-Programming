@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdTriangle = new System.Windows.Forms.RadioButton();
-            this.rdEllipse = new System.Windows.Forms.RadioButton();
-            this.rdRectangle = new System.Windows.Forms.RadioButton();
+            this.rbTriangle = new System.Windows.Forms.RadioButton();
+            this.rbEllipse = new System.Windows.Forms.RadioButton();
+            this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.lbColor = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -40,9 +40,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdTriangle);
-            this.groupBox1.Controls.Add(this.rdEllipse);
-            this.groupBox1.Controls.Add(this.rdRectangle);
+            this.groupBox1.Controls.Add(this.rbTriangle);
+            this.groupBox1.Controls.Add(this.rbEllipse);
+            this.groupBox1.Controls.Add(this.rbRectangle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -51,37 +51,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shapes";
             // 
-            // rdTriangle
+            // rbTriangle
             // 
-            this.rdTriangle.AutoSize = true;
-            this.rdTriangle.Location = new System.Drawing.Point(178, 139);
-            this.rdTriangle.Name = "rdTriangle";
-            this.rdTriangle.Size = new System.Drawing.Size(124, 33);
-            this.rdTriangle.TabIndex = 0;
-            this.rdTriangle.Text = "Triangle";
-            this.rdTriangle.UseVisualStyleBackColor = true;
+            this.rbTriangle.AutoSize = true;
+            this.rbTriangle.Location = new System.Drawing.Point(178, 139);
+            this.rbTriangle.Name = "rbTriangle";
+            this.rbTriangle.Size = new System.Drawing.Size(124, 33);
+            this.rbTriangle.TabIndex = 0;
+            this.rbTriangle.Text = "Triangle";
+            this.rbTriangle.UseVisualStyleBackColor = true;
             // 
-            // rdEllipse
+            // rbEllipse
             // 
-            this.rdEllipse.AutoSize = true;
-            this.rdEllipse.Location = new System.Drawing.Point(178, 90);
-            this.rdEllipse.Name = "rdEllipse";
-            this.rdEllipse.Size = new System.Drawing.Size(108, 33);
-            this.rdEllipse.TabIndex = 0;
-            this.rdEllipse.Text = "Ellipse";
-            this.rdEllipse.UseVisualStyleBackColor = true;
+            this.rbEllipse.AutoSize = true;
+            this.rbEllipse.Location = new System.Drawing.Point(178, 90);
+            this.rbEllipse.Name = "rbEllipse";
+            this.rbEllipse.Size = new System.Drawing.Size(108, 33);
+            this.rbEllipse.TabIndex = 0;
+            this.rbEllipse.Text = "Ellipse";
+            this.rbEllipse.UseVisualStyleBackColor = true;
             // 
-            // rdRectangle
+            // rbRectangle
             // 
-            this.rdRectangle.AutoSize = true;
-            this.rdRectangle.Checked = true;
-            this.rdRectangle.Location = new System.Drawing.Point(178, 41);
-            this.rdRectangle.Name = "rdRectangle";
-            this.rdRectangle.Size = new System.Drawing.Size(143, 33);
-            this.rdRectangle.TabIndex = 0;
-            this.rdRectangle.TabStop = true;
-            this.rdRectangle.Text = "Rectangle";
-            this.rdRectangle.UseVisualStyleBackColor = true;
+            this.rbRectangle.AutoSize = true;
+            this.rbRectangle.Checked = true;
+            this.rbRectangle.Location = new System.Drawing.Point(178, 41);
+            this.rbRectangle.Name = "rbRectangle";
+            this.rbRectangle.Size = new System.Drawing.Size(143, 33);
+            this.rbRectangle.TabIndex = 0;
+            this.rbRectangle.TabStop = true;
+            this.rbRectangle.Text = "Rectangle";
+            this.rbRectangle.UseVisualStyleBackColor = true;
             // 
             // lbColor
             // 
@@ -146,8 +146,8 @@
         private System.Windows.Forms.Label lbColor;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.RadioButton rdRectangle;
-        private System.Windows.Forms.RadioButton rdTriangle;
-        private System.Windows.Forms.RadioButton rdEllipse;
+        private System.Windows.Forms.RadioButton rbRectangle;
+        private System.Windows.Forms.RadioButton rbTriangle;
+        private System.Windows.Forms.RadioButton rbEllipse;
     }
 }

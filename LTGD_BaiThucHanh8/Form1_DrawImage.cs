@@ -17,6 +17,8 @@ namespace LTGD_BaiThucHanh8
             Rectangle rc1 = new Rectangle(0, 0, ClientRectangle.Width / 2, ClientRectangle.Height / 2);
             Rectangle rc2 = new Rectangle(0, ClientRectangle.Height / 2, ClientRectangle.Width / 2, ClientRectangle.Height / 2);
             Rectangle rc3 = new Rectangle(ClientRectangle.Width / 2, 0, ClientRectangle.Width / 2, ClientRectangle.Height);
+            Pen pen = new Pen(Color.Blue, 5);
+            e.Graphics.DrawRectangles(pen, new Rectangle[] { rc1, rc2, rc3 });
             DrawImage(rc1, e.Graphics);
             DrawText(rc2, e.Graphics);
             DrawPolygon(rc3, e.Graphics);

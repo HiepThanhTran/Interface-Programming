@@ -9,14 +9,11 @@ namespace LTGD_BaiThucHanh8
 {
     public partial class BTTL_Form2 : Form
     {
-        public static Color shapeColor;
-        public static string shapeType;
+        public static Shape shape;
 
         private List<Shape> shapeList;
         private Bitmap originalBitmap;
-        private Rectangle rect;
         private Point oldPoint;
-        private Shape shape;
 
         public BTTL_Form2()
         {
@@ -26,11 +23,8 @@ namespace LTGD_BaiThucHanh8
         private void BTTL_Form2_Load(object sender, EventArgs e)
         {
             originalBitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            shapeColor = Color.FromKnownColor(KnownColor.HotTrack);
+            shape = ShapeFactory.CreateShape(ShapeType.Rectangle, Color.FromKnownColor(KnownColor.HotTrack));
             shapeList = new List<Shape>();
-            shapeType = "Rectangle";
-            rect = new Rectangle();
-            shape = new Shape();
         }
 
         private void BTTL_Form2_Paint(object sender, PaintEventArgs e)
@@ -57,24 +51,23 @@ namespace LTGD_BaiThucHanh8
         {
             if (e.Button == MouseButtons.Left)
             {
-                // Tính toán kích thước mới đồng thời cập nhật lại vị trí top-left (nếu có) của hình chữ nhật
+                // Tính toán kích thước mới đồng thời cập nhật lại vị trí top-left (nếu có) của hình chữ nhật mới
                 int width = Math.Abs(e.Location.X - oldPoint.X);
                 int height = Math.Abs(e.Location.Y - oldPoint.Y);
                 int topLeftX = oldPoint.X;
                 int topLeftY = oldPoint.Y;
                 if (e.Location.X < oldPoint.X) topLeftX = e.Location.X; // Trường hợp kéo sang trái
                 if (e.Location.Y < oldPoint.Y) topLeftY = e.Location.Y; // Trường hợp kéo lên trên
-                rect.Location = new Point(topLeftX, topLeftY);
-                rect.Size = new Size(width, height);
 
-                // Tạo đối tượng graphics của originalBitmap và đối tượng shape để bắt đầu vẽ khung hình tương ứng
+                // Lấy graphics của originalBitmap
                 Graphics g = Graphics.FromImage(originalBitmap);
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.Clear(BackColor);
-                shape.Color = shapeColor;
-                shape.Type = shapeType;
-                shape.Rect = rect;
+
+                // Cập nhật khung hình chữ nhật mới cho đối tượng shape
+                shape.Rect = new Rectangle(topLeftX, topLeftY, width, height);
                 shape.Draw(g);
+
                 Invalidate();
                 g.Dispose();
             }
@@ -83,7 +76,7 @@ namespace LTGD_BaiThucHanh8
         private void BTTL_Form2_MouseUp(object sender, MouseEventArgs e)
         {
             shapeList.Add(shape);
-            shape = new Shape();
+            shape = ShapeFactory.CreateShape(shape.Type, shape.Color);
             Invalidate();
         }
 
