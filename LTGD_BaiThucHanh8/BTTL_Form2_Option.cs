@@ -38,8 +38,7 @@ namespace LTGD_BaiThucHanh8
         private void BtnOK_Click(object sender, EventArgs e)
         {
             ShapeType shapeType = (ShapeType)(radioButtons.FirstOrDefault(rb => rb.Checked)).Tag;
-            BTTL_Form2.shape = ShapeFactory.CreateShape(shapeType);
-            BTTL_Form2.shape.Color = lbColor.BackColor;
+            BTTL_Form2.shape = ShapeFactory.CreateShape(shapeType, lbColor.BackColor);
             Close();
         }
 

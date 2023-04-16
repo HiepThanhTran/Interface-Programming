@@ -34,6 +34,7 @@
             this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnClearAll,
+            this.btnSave,
             this.btnExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 32);
@@ -86,10 +88,19 @@
             // btnOption
             // 
             this.btnOption.Name = "btnOption";
-            this.btnOption.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.btnOption.Size = new System.Drawing.Size(244, 32);
+            this.btnOption.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.O)));
+            this.btnOption.Size = new System.Drawing.Size(298, 32);
             this.btnOption.Text = "Option...";
             this.btnOption.Click += new System.EventHandler(this.BtnOption_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.btnSave.Size = new System.Drawing.Size(256, 32);
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BTTL_Form2
             // 
@@ -126,5 +137,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnClearAll;
         private System.Windows.Forms.ToolStripMenuItem btnExit;
         private System.Windows.Forms.ToolStripMenuItem btnOption;
+        private System.Windows.Forms.ToolStripMenuItem btnSave;
     }
 }

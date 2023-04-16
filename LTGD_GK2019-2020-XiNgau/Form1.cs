@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTGD_GK2019_2020
@@ -15,7 +8,6 @@ namespace LTGD_GK2019_2020
     {
         Random rand = new Random();
         private int soTienConLai;
-        private int count = 0;
 
         public Form1()
         {

@@ -46,13 +46,11 @@ namespace LTGD_GK2019_2020_Crown_Anchor
                 pct2.Image = Image.FromFile(danhSachBauCua[indexImg2]);
                 pct3.Image = Image.FromFile(danhSachBauCua[indexImg3]);
 
-                int chon = comboBox1.SelectedIndex;
-                int count = 0;
+                int chon = comboBox1.SelectedIndex, count = 0;
                 if (chon == indexImg1) count++;
                 if (chon == indexImg2) count++;
                 if (chon == indexImg3) count++;
-                tienConLai += tienCuoc * count;
-                if (count == 0) tienConLai -= tienCuoc;
+                tienConLai = (count == 0) ? tienConLai - tienCuoc : tienConLai + tienCuoc * count;
 
                 lbTienConLai.Text = tienConLai.ToString();
                 if (tienConLai <= 0) btnQuay.Enabled = false;

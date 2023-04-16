@@ -65,7 +65,10 @@ namespace LTGD_BaiThucHanh8
                 g.Clear(BackColor);
 
                 // Cập nhật khung hình chữ nhật mới cho đối tượng shape
-                shape.Rect = new Rectangle(topLeftX, topLeftY, width, height);
+                shape.Height = height;
+                shape.Width = width;
+                shape.X = topLeftX;
+                shape.Y = topLeftY;
                 shape.Draw(g);
 
                 Invalidate();
@@ -92,6 +95,17 @@ namespace LTGD_BaiThucHanh8
             g.Clear(BackColor);
             shapeList.Clear();
             Invalidate();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Filter = "Png File (*.png)|*.png" +
+                "| Jpg File (*.jpg)|*.jpg" +
+                "| Jpeg File(*.jpeg)|*.jpeg" +
+                "| Bitmap File (*.bmp)|*.bmp" +
+                "| Gif File (*.gif)|*.gif";
+            if (sd.ShowDialog() == DialogResult.OK) originalBitmap.Save(sd.FileName);
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
