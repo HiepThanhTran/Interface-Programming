@@ -7,6 +7,10 @@ namespace LTGD_GK2022_2023_MT
 {
     public partial class Form1 : Form
     {
+        private Size oldSize;
+        private float widthRatio;
+        private float heightRatio;
+
         private Bitmap bmp;
 
         public Form1()
@@ -20,11 +24,6 @@ namespace LTGD_GK2022_2023_MT
         {
             txtX.Text = txtY.Text = txtWidth.Text = txtHeight.Text = "";
             txtX.Focus();
-        }
-
-        private void DrawImage()
-        {
-
         }
 
         private void AddItemToListView(MyShape shape)
@@ -43,6 +42,7 @@ namespace LTGD_GK2022_2023_MT
         {
             bmp = new Bitmap(pnlVe.Width, pnlVe.Height);
             cbDoDay.SelectedIndex = 0;
+            oldSize = this.Size;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
