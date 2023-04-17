@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD378291-80DF-4F29-BBC6-7717B8F571DC}</ProjectGuid>
+    <ProjectGuid>{F21706B5-D230-46BD-B785-E4B422E1860E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LTGD_GK2022_2023</RootNamespace>
-    <AssemblyName>LTGD_GK2022-2023</AssemblyName>
+    <RootNamespace>LTGD_GK2022_2023_MT</RootNamespace>
+    <AssemblyName>LTGD_GK2022-2023-MT</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\MyShape.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
