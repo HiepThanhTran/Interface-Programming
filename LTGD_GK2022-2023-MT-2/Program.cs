@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace LTGD_GK2022_2023
+namespace LTGD_GK2022_2023_MT_2
 {
     internal static class Program
     {
@@ -13,7 +13,7 @@ namespace LTGD_GK2022_2023
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmMain());
         }
     }
 }

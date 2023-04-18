@@ -8,9 +8,9 @@ namespace LTGD_BaiThucHanh8
     public partial class BTTL_Form1 : Form
     {
         Pen pen = new Pen(Color.Black, 4);
-        int chartPadding = 10; // Khoảng trắng thụt vào ở 2 bên
-        int columnWidth = 70; // Chiều dài từng cột của biểu đồ
-        float ratio = 3.2f; // Tỉ lệ
+        int chartPadding = 10;
+        int chartWidth = 70;
+        float ratio = 3.2f;
 
         public BTTL_Form1()
         {
@@ -29,7 +29,6 @@ namespace LTGD_BaiThucHanh8
             };
             try
             {
-                // Tạo bitmap để vẽ biểu đồ
                 Bitmap bmp = new Bitmap(c.Width, c.Height);
                 Graphics gbmp = Graphics.FromImage(bmp);
                 gbmp.DrawLine(pen, 0, c.Height, c.Width, c.Height);
@@ -54,8 +53,8 @@ namespace LTGD_BaiThucHanh8
                 {
                     float chartHeight = percentages[i] / 100 * c.Height * ratio;
                     float dy = c.Height - chartHeight - (pen.Width - 2);
-                    gbmp.FillRectangle(brushes[i], dx, dy, columnWidth, chartHeight);
-                    dx += (c.Width - chartPadding * 2 - columnWidth * 5) / 4 + columnWidth;
+                    gbmp.FillRectangle(brushes[i], dx, dy, chartWidth, chartHeight);
+                    dx += (c.Width - chartPadding * 2 - chartWidth * datas.Length) / (datas.Length - 1) + chartWidth;
                 }
 
                 // Gắn bitmap vào pictureBox
