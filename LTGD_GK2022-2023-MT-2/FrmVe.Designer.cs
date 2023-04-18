@@ -38,8 +38,6 @@
             this.Name = "FrmVe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Vẽ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmVe_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmVe_Paint);
             this.Resize += new System.EventHandler(this.FrmVe_Resize);
             this.ResumeLayout(false);

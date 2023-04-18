@@ -11,13 +11,6 @@ namespace LTGD_GK2022_2023_MT_2
             InitializeComponent();
         }
 
-        private void FrmVe_Load(object sender, System.EventArgs e)
-        {
-            this.Width = MdiParent.Width;
-            this.Height = MdiParent.Height;
-            this.WindowState = FormWindowState.Maximized;
-        }
-
         private void FrmVe_Paint(object sender, PaintEventArgs e)
         {
             Image img1 = Image.FromFile("dragon.png");
@@ -32,16 +25,20 @@ namespace LTGD_GK2022_2023_MT_2
 
             GraphicsPath gp = new GraphicsPath();
             gp.AddRectangle(rect3);
-            PathGradientBrush pgb = new PathGradientBrush(gp);
-            pgb.CenterColor = Color.White;
-            pgb.SurroundColors = new Color[] { Color.Orange };
+            PathGradientBrush pgb = new PathGradientBrush(gp)
+            {
+                CenterColor = Color.White,
+                SurroundColors = new Color[] { Color.Orange }
+            };
             e.Graphics.FillPath(pgb, gp);
 
             Font font = new Font("Arial", 74, FontStyle.Bold);
             Brush brush = new SolidBrush(Color.OrangeRed);
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
-            format.LineAlignment = StringAlignment.Center;
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
             e.Graphics.DrawString("Trần Thanh Hiệp", font, brush, rect3, format);
         }
 

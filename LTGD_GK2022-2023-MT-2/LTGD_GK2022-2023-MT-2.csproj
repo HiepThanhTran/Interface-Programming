@@ -58,6 +58,9 @@
     <Compile Include="FrmQuaySo.Designer.cs">
       <DependentUpon>FrmQuaySo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmQuaySo.Designer.cs">
+      <DependentUpon>FrmQuaySo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVe.cs">
       <SubType>Form</SubType>
     </Compile>
