@@ -15,10 +15,10 @@ namespace LTGD_GK2022_2023_MT_2
         {
             Image img1 = Image.FromFile("dragon.png");
             Image img2 = Image.FromFile("dragon.png");
-            img1.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            Rectangle rect1 = new Rectangle(0, 0, ClientRectangle.Width / 2, ClientRectangle.Height / 2);
-            Rectangle rect2 = new Rectangle(ClientRectangle.Width / 2, 0, ClientRectangle.Width / 2, ClientRectangle.Height / 2);
-            Rectangle rect3 = new Rectangle(0, ClientRectangle.Height / 2, ClientRectangle.Width, ClientRectangle.Height / 2);
+            img2.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            Rectangle rect1 = new Rectangle(0, 0, this.Width / 2, this.Height / 2);
+            Rectangle rect2 = new Rectangle(this.Width / 2, 0, this.Width / 2, this.Height / 2);
+            Rectangle rect3 = new Rectangle(0, this.Height / 2, this.Width, this.Height / 2);
 
             e.Graphics.DrawImage(img1, rect1);
             e.Graphics.DrawImage(img2, rect2);
