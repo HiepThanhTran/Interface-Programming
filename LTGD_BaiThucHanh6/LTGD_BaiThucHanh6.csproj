@@ -52,9 +52,6 @@
     <Compile Include="BTTL_Form1.Designer.cs">
       <DependentUpon>BTTL_Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="BTTL_Form1.Designer.cs">
-      <DependentUpon>BTTL_Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="BTTL_Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,9 +73,6 @@
     <Compile Include="model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BTTL_Form1.resx">
-      <DependentUpon>BTTL_Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BTTL_Form1.resx">
       <DependentUpon>BTTL_Form1.cs</DependentUpon>
     </EmbeddedResource>
