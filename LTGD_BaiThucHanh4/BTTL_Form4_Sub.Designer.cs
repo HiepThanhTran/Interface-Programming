@@ -47,7 +47,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(880, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(880, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -62,7 +62,7 @@
             this.tsmClose});
             this.fileToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // tsmLoad
@@ -70,7 +70,7 @@
             this.tsmLoad.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.tsmLoad.MergeIndex = 1;
             this.tsmLoad.Name = "tsmLoad";
-            this.tsmLoad.Size = new System.Drawing.Size(224, 26);
+            this.tsmLoad.Size = new System.Drawing.Size(180, 22);
             this.tsmLoad.Text = "Load";
             this.tsmLoad.Click += new System.EventHandler(this.TsmLoad_Click);
             // 
@@ -79,7 +79,7 @@
             this.tsmOpen.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.tsmOpen.MergeIndex = 2;
             this.tsmOpen.Name = "tsmOpen";
-            this.tsmOpen.Size = new System.Drawing.Size(224, 26);
+            this.tsmOpen.Size = new System.Drawing.Size(180, 22);
             this.tsmOpen.Text = "Open";
             this.tsmOpen.Click += new System.EventHandler(this.TsmOpen_Click);
             // 
@@ -88,7 +88,7 @@
             this.tsmClear.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.tsmClear.MergeIndex = 3;
             this.tsmClear.Name = "tsmClear";
-            this.tsmClear.Size = new System.Drawing.Size(224, 26);
+            this.tsmClear.Size = new System.Drawing.Size(180, 22);
             this.tsmClear.Text = "Clear";
             this.tsmClear.Click += new System.EventHandler(this.TsmClear_Click);
             // 
@@ -97,7 +97,7 @@
             this.tsmSave.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.tsmSave.MergeIndex = 4;
             this.tsmSave.Name = "tsmSave";
-            this.tsmSave.Size = new System.Drawing.Size(224, 26);
+            this.tsmSave.Size = new System.Drawing.Size(180, 22);
             this.tsmSave.Text = "Save";
             this.tsmSave.Click += new System.EventHandler(this.TsmSave_Click);
             // 
@@ -106,7 +106,7 @@
             this.tsmClose.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.tsmClose.MergeIndex = 6;
             this.tsmClose.Name = "tsmClose";
-            this.tsmClose.Size = new System.Drawing.Size(224, 26);
+            this.tsmClose.Size = new System.Drawing.Size(180, 22);
             this.tsmClose.Text = "Close";
             this.tsmClose.Click += new System.EventHandler(this.TsmClose_Click);
             // 
@@ -122,7 +122,7 @@
             // 
             // BTTL_Form4_Sub
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 469);
             this.Controls.Add(this.picImage);

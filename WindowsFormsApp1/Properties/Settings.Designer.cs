@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTGD.Properties
+namespace WindowsFormsApp1.Properties
 {
 
 
