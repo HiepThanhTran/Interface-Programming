@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LTGD_BTL-GameLoto", "LTGD_B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTGD_BTL-TracNghiem", "LTGD_BTL-TracNghiem\LTGD_BTL-TracNghiem.csproj", "{E2659861-B321-43B1-BFD7-0AAE856F99C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{DC60CF41-D302-4228-876A-2449CEB6742B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuiThiNgan_2151050271_KiemTraGK_De3", "WindowsFormsApp1\BuiThiNgan_2151050271_KiemTraGK_De3.csproj", "{DC60CF41-D302-4228-876A-2449CEB6742B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
